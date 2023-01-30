@@ -2535,6 +2535,9 @@
     "/kcna/:lang/:category?": [
         "Rongronggg9"
     ],
+    "/ke/researchResults": [
+        "shaomingbo"
+    ],
     "/keep/user/:id": [
         "Dectinc",
         "DIYgod"
@@ -2631,6 +2634,9 @@
     ],
     "/line/today/:edition?/:tab?": [
         "nczitzk"
+    ],
+    "/linkedin/cn/jobs/:keywords?": [
+        "bigfei"
     ],
     "/linkedin/jobs": [
         "BrandNewLifeJackie26"
