@@ -308,6 +308,9 @@
     "/ally/rail/:category?/:topic?": [
         "Rongronggg9"
     ],
+    "/amazon/awsblogs/:locale?": [
+        "HankChow"
+    ],
     "/amazon/kindle/software-updates": [
         "NavePnow"
     ],
@@ -1293,6 +1296,9 @@
     "/douban/group/:groupid/:type?": [
         "DIYgod"
     ],
+    "/douban/list/:type?": [
+        "5upernova-heng"
+    ],
     "/douban/jobs/:type": [
         "Fatpandac"
     ],
@@ -1621,6 +1627,9 @@
     ],
     "/gameapps/": [
         "TonyRL"
+    ],
+    "/gamebase/news/:type?/:category?": [
+        "nczitzk"
     ],
     "/gamer/gnn/:category?": [
         "Arracc"
@@ -3000,6 +3009,9 @@
     "/macfilos/blog": [
         "nczitzk"
     ],
+    "/magazinelib/latest-magazine/:query?": [
+        "NavePnow"
+    ],
     "/mangadex/:id/:lang?": [
         "vzz64"
     ],
@@ -3483,6 +3495,10 @@
     "/oo-software/changelog/:id": [
         "nczitzk"
     ],
+    "/openai/blog/:tag?": [
+        "StevenRCE0",
+        "nczitzk"
+    ],
     "/openwrt/releases/:model?": [
         "DIYgod"
     ],
@@ -3516,6 +3532,9 @@
     ],
     "/oschina/user/:id": [
         "dxmpalb"
+    ],
+    "/oshwhub/:sortType?": [
+        "tylinux"
     ],
     "/oup/:name": [
         "Fatpandac"
@@ -4297,6 +4316,12 @@
     "/swjtu/jyzpxx": [
         "qizidog"
     ],
+    "/swjtu/jwc": [
+        "mobyw"
+    ],
+    "/swjtu/xg/:code?": [
+        "mobyw"
+    ],
     "/swpu/bgw/:code": [
         "CYTMWIA"
     ],
@@ -4415,6 +4440,9 @@
     "/test/:id": [
         "DIYgod",
         "NeverBehave"
+    ],
+    "/theatlantic/:category": [
+        "NavePnow"
     ],
     "/thecatcity/:term?": [
         "TonyRL"
@@ -4773,6 +4801,12 @@
     ],
     "/v1tx/": [
         "TonyRL"
+    ],
+    "/vcb-s/": [
+        "cxfksword"
+    ],
+    "/vcb-s/category/:cate": [
+        "cxfksword"
     ],
     "/verfghbw/press/:keyword?": [
         "quinn-dev"
@@ -6460,7 +6494,6 @@
     "/totalcommander/whatsnew": [],
     "/blizzard/news/:language?/:category?": [],
     "/deepl/blog/:lang?": [],
-    "/openai/blog/:tag?": [],
     "/muchong/journal/:type?": [],
     "/muchong/:id/:type?/:sort?": [],
     "/qstheory/:category?": [],
