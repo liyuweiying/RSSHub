@@ -2465,6 +2465,9 @@
     "/instagram/2/:category/:key": [
         "TonyRL"
     ],
+    "/instructables/projects/:category?": [
+        "wolfg1969"
+    ],
     "/iqiyi/album/:id": [
         "TonyRL"
     ],
@@ -2783,6 +2786,12 @@
     ],
     "/jornada/:date?/:category?": [
         "Thealf154"
+    ],
+    "/jou/tzgg": [
+        "real-jiakai"
+    ],
+    "/jou/yztzgg": [
+        "real-jiakai"
     ],
     "/jseea/news/:type?": [
         "schen1024"
@@ -3118,6 +3127,18 @@
     "/mobilism/portal/:type/:fulltext?": [
         "nitezs"
     ],
+    "/modelscope/community": [
+        "TonyRL"
+    ],
+    "/modelscope/datasets": [
+        "TonyRL"
+    ],
+    "/modelscope/models": [
+        "TonyRL"
+    ],
+    "/modelscope/studios": [
+        "TonyRL"
+    ],
     "/mohw/clarification": [
         "nczitzk"
     ],
@@ -3370,6 +3391,9 @@
     "/njust/jwc/:type?": [
         "MilkShakeYoung",
         "jasongzy"
+    ],
+    "/njxzc/libtzgg": [
+        "real-jiakai"
     ],
     "/njxzc/tzgg": [
         "real-jiakai"
@@ -4447,6 +4471,9 @@
         "hoilc",
         "TonyRL",
         "ETiV"
+    ],
+    "/techcrunch/news": [
+        "NavePnow"
     ],
     "/techflowpost/express": [
         "nczitzk"
