@@ -9805,6 +9805,28 @@
       }
     ]
   },
+  "hacking8.com": {
+    "_name": "Hacking8",
+    ".": [
+      {
+        "title": "信息流",
+        "docs": "https://docs.rsshub.app/programming.html#hacking8-xin-xi-liu",
+        "source": [
+          "/index/:category",
+          "/"
+        ],
+        "target": "/hacking8/:category?"
+      },
+      {
+        "title": "搜索",
+        "docs": "https://docs.rsshub.app/programming.html#hacking8-sou-suo",
+        "source": [
+          "/search",
+          "/"
+        ]
+      }
+    ]
+  },
   "hackmd.io": {
     "_name": "HackMD",
     ".": [
@@ -24469,6 +24491,11 @@
         "docs": "https://docs.rsshub.app/social-media.html#youtube",
         "source": "/user/:username",
         "target": "/youtube/user/:username"
+      },
+      {
+        "title": "用户",
+        "docs": "https://docs.rsshub.app/social-media.html#youtube",
+        "source": "/:handle"
       },
       {
         "title": "频道",
