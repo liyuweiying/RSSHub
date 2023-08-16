@@ -2246,19 +2246,43 @@
     "_name": "Aqara",
     ".": [
       {
-        "title": "News",
-        "docs": "https://docs.rsshub.app/routes/other#aqara-news",
+        "title": "新闻",
+        "docs": "https://docs.rsshub.app/routes/other#aqara-xin-wen",
         "source": [
-          "/news",
-          "/"
+          "/:region/about-us/news",
+          "/news"
         ],
-        "target": "/aqara/news"
+        "target": "/aqara/:region/news"
+      },
+      {
+        "title": "博客",
+        "docs": "https://docs.rsshub.app/routes/other#aqara-bo-ke",
+        "source": [
+          "/:region/blog"
+        ],
+        "target": "/aqara/:region/blog"
+      },
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/other#aqara-fen-lei",
+        "source": [
+          "/:region/category/:id"
+        ],
+        "target": "/aqara/:region/category/:id"
+      },
+      {
+        "title": "标签",
+        "docs": "https://docs.rsshub.app/routes/other#aqara-biao-qian",
+        "source": [
+          "/:region/tag/:id"
+        ],
+        "target": "/aqara/:region/tag/:id"
       }
     ],
     "community": [
       {
-        "title": "Community",
-        "docs": "https://docs.rsshub.app/routes/other#aqara-community",
+        "title": "社区",
+        "docs": "https://docs.rsshub.app/routes/other#aqara-she-qu",
         "source": [
           "/pc",
           "/"
@@ -7874,7 +7898,6 @@
         "title": "首页",
         "docs": "https://docs.rsshub.app/routes/new-media#foresight-news-shou-ye",
         "source": [
-          "/article",
           "/"
         ],
         "target": "/foresightnews"
@@ -7883,7 +7906,6 @@
         "title": "文章",
         "docs": "https://docs.rsshub.app/routes/new-media#foresight-news-wen-zhang",
         "source": [
-          "/article",
           "/"
         ],
         "target": "/foresightnews/article"
