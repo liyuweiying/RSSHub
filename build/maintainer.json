@@ -6570,6 +6570,9 @@
     "/telegram/blog": [
         "fengkx"
     ],
+    "/telegram/channel/:username": [
+        "synchrone"
+    ],
     "/telegram/channel/:username/:routeParams?": [
         "DIYgod",
         "Rongronggg9"
@@ -6811,6 +6814,9 @@
     ],
     "/tokeninsight/report:lang?": [
         "fuergaosi233"
+    ],
+    "/tongji/bks": [
+        "shiquda"
     ],
     "/tongji/sse/:type?": [
         "sgqy"
@@ -7348,6 +7354,9 @@
     ],
     "/wmc-bj/publish/:category?": [
         "nczitzk"
+    ],
+    "/wmpvp/news/:type": [
+        "tssujt"
     ],
     "/wnacg": [
         "KenMizz"

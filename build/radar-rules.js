@@ -18349,6 +18349,10 @@
         source:[ "/:lang/report" ],
         target:"/tokeninsight/report/:lang" } ] },
   "tongji.edu.cn":{ _name:"同济大学",
+    bksy:[ { title:"本科生院通知公告",
+        docs:"https://docs.rsshub.app/routes/university#tong-ji-da-xue",
+        source:[ "/" ],
+        target:"/tongji/bks" } ],
     sse:[ { title:"软件学院通知",
         docs:"https://docs.rsshub.app/routes/university#tong-ji-da-xue",
         source:[ "/xxzx/xytz/:type",
@@ -19812,6 +19816,9 @@
 
                     return `/wmc-bj/publish${category ? `/${category}` : ''}`;
                 } } ] },
+  "wmpvp.com":{ _name:"完美世界电竞",
+    ".":[ { title:"资讯",
+        docs:"https://docs.rsshub.app/routes/game#wan-mei-shi-jie-dian-jing-zi-xun" } ] },
   "wnacg.org":{ _name:"紳士漫畫",
     ".":[ { title:"最新",
         docs:"https://docs.rsshub.app/routes/anime#shen-shi-man-hua",
