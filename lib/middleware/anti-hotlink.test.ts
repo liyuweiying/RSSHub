@@ -1,8 +1,12 @@
 import { describe, expect, it, jest, afterEach, afterAll } from '@jest/globals';
+import supertest from 'supertest';
 import Parser from 'rss-parser';
+import querystring from 'query-string';
+import type { serve } from '@hono/node-server';
 
 const parser = new Parser();
 jest.setTimeout(50000);
+let server: ReturnType<typeof serve>;
 
 afterAll(() => {
     delete process.env.HOTLINK_TEMPLATE;
@@ -16,6 +20,7 @@ afterEach(() => {
     delete process.env.HOTLINK_INCLUDE_PATHS;
     delete process.env.HOTLINK_EXCLUDE_PATHS;
     delete process.env.ALLOW_USER_HOTLINK_TEMPLATE;
+    server.close();
     jest.resetModules();
 });
 
@@ -117,21 +122,17 @@ const expects = {
 };
 
 const testAntiHotlink = async (path, expectObj, query?: string | Record<string, any>) => {
-    const app = (await import('@/app')).default;
+    server = (await import('@/index')).default;
+    const request = supertest(server);
 
     let queryStr;
     if (query) {
-        queryStr =
-            typeof query === 'string'
-                ? query
-                : Object.entries(query)
-                      .map(([key, value]) => `${key}=${value}`)
-                      .join('&');
+        queryStr = typeof query === 'string' ? query : querystring.stringify(query);
     }
     path = path + (queryStr ? `?${queryStr}` : '');
 
-    const response = await app.request(path);
-    const parsed = await parser.parseString(await response.text());
+    const response = await request.get(path);
+    const parsed = await parser.parseString(response.text);
     expect({
         items: parsed.items.slice(0, expectObj.items.length).map((i) => i.content),
         desc: parsed.description,
@@ -246,8 +247,9 @@ describe('anti-hotlink', () => {
 
     it('invalid-property', async () => {
         process.env.HOTLINK_TEMPLATE = 'https://i3.wp.com/${createObjectURL}';
-        const app = (await import('@/app')).default;
-        const response = await app.request('/test/complicated');
-        expect(await response.text()).toContain('Error: Invalid URL property: createObjectURL');
+        server = (await import('@/index')).default;
+        const request = supertest(server);
+        const response = await request.get('/test/complicated');
+        expect(response.text).toContain('Error: Invalid URL property: createObjectURL');
     });
 });

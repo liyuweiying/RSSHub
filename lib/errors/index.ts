@@ -41,6 +41,8 @@ export const errorHandler: ErrorHandler = (error, ctx) => {
             },
         });
     } else {
+        ctx.header('Content-Type', 'text/html; charset=UTF-8');
+
         if (error instanceof RequestInProgressError) {
             ctx.header('Cache-Control', `public, max-age=${config.requestTimeout / 1000}`);
             ctx.status(503);
@@ -57,7 +59,7 @@ export const errorHandler: ErrorHandler = (error, ctx) => {
 
         const requestPath = ctx.req.path;
 
-        return ctx.html(
+        return ctx.body(
             art(path.resolve(__dirname, '../views/error.art'), {
                 requestPath,
                 message,

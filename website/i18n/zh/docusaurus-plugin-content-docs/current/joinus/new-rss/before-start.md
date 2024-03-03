@@ -96,7 +96,7 @@ npm run dev
 <TabItem value="Arrow Functions" label="箭头函数" active>
 
 ```js
-export default (router) => {
+module.exports = (router) => {
     // highlight-next-line
     router.get('/issue/:user/:repo?', './issue');
 };
@@ -106,7 +106,7 @@ export default (router) => {
 <TabItem value="Regular Functions" label="传统函数">
 
 ```js
-export default function (router) {
+module.exports = function (router) {
     // highlight-next-line
     router.get('/issue/:user/:repo?', './issue');
 };

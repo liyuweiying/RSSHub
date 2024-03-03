@@ -46,7 +46,7 @@ const rss3Ums = (data) => {
             };
         }),
     };
-    return umsResult;
+    return JSON.stringify(umsResult, null, 4);
 };
 
 // we treat the domain as the owner of the content
