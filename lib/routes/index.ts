@@ -8,6 +8,7 @@ import { getDebugInfo } from '@/utils/debug-info';
 const startTime = Date.now();
 
 const handler: Handler = (ctx) => {
+    ctx.header('Content-Type', 'text/html; charset=UTF-8');
     ctx.header('Cache-Control', 'no-cache');
 
     const debug = getDebugInfo();
@@ -17,7 +18,7 @@ const handler: Handler = (ctx) => {
 
     const duration = Date.now() - startTime;
 
-    return ctx.html(
+    return ctx.body(
         art(path.resolve(__dirname, '../views/welcome.art'), {
             showDebug,
             disallowRobot,

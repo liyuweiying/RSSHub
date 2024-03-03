@@ -20,11 +20,7 @@ const routes: Record<string, (root: Root) => void> = {};
 for (const path in imports) {
     const name = path.split('/').find(Boolean);
     if (name) {
-        routes[name] = (
-            imports[path] as {
-                default: (root: Root) => void;
-            }
-        ).default;
+        routes[name] = imports[path] as (root: Root) => void;
     }
 }
 
@@ -35,7 +31,7 @@ export default function (app: Hono) {
             get: (routePath, filePath) => {
                 const wrapedHandler: Handler = async (ctx, ...args) => {
                     if (!ctx.get('data')) {
-                        const { default: handler } = await import(path.join(__dirname, 'routes', name, filePath));
+                        const handler = require(path.join(__dirname, 'routes', name, filePath));
                         await handler(ctx, ...args);
                     }
                 };

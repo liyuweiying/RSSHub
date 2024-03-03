@@ -1,4 +1,4 @@
-import { strict as assert } from 'assert';
+const assert = require('assert').strict;
 
 const millisInAnHour = 60 * 60 * 1000;
 const serverTimezone = -new Date().getTimezoneOffset() / 60;

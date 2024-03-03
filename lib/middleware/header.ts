@@ -1,5 +1,7 @@
+import { getIp } from '@/utils/helpers';
 import { MiddlewareHandler } from 'hono';
 import etagCalculate from 'etag';
+import logger from '@/utils/logger';
 import { config } from '@/config';
 import { Data } from '@/types';
 
@@ -18,6 +20,9 @@ function etagMatches(etag: string, ifNoneMatch: string | null) {
 }
 
 const middleware: MiddlewareHandler = async (ctx, next) => {
+    const ip = getIp(ctx);
+    logger.info(`${ctx.req.url}, user IP: ${ip}`);
+
     for (const key in headers) {
         ctx.header(key, headers[key]);
     }
@@ -39,7 +44,7 @@ const middleware: MiddlewareHandler = async (ctx, next) => {
     const ifNoneMatch = ctx.req.header('If-None-Match') ?? null;
     if (etagMatches(etag, ifNoneMatch)) {
         ctx.status(304);
-        ctx.set('no-content', true);
+        return ctx.body(null);
     } else {
         ctx.header('Last-Modified', lastBuildDate);
     }

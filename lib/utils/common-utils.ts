@@ -1,5 +1,5 @@
 import { parseDate } from '@/utils/parse-date';
-import title from 'title';
+const title = require('title');
 
 // convert a string into title case
 const toTitleCase = (str: string) => title(str);

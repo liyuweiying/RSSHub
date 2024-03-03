@@ -96,7 +96,7 @@ For example, if you are creating an RSS feed for [GitHub Repo Issues](/routes/pr
 <TabItem value="Arrow Functions" label="Arrow Functions" default>
 
 ```js
-export default (router) => {
+module.exports = (router) => {
     // highlight-next-line
     router.get('/issue/:user/:repo?', './issue');
 };
@@ -106,7 +106,7 @@ export default (router) => {
 <TabItem value="Regular Functions" label="Regular Functions">
 
 ```js
-export default function (router) {
+module.exports = function (router) {
     // highlight-next-line
     router.get('/issue/:user/:repo?', './issue');
 };
