@@ -1,1 +1,1 @@
-web: node lib/index.ts
+web: node lib/index.js
