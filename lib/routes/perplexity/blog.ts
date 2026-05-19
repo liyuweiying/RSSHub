@@ -5,7 +5,7 @@ import type { Data, DataItem, Route } from '@/types';
 import { ViewType } from '@/types';
 import cache from '@/utils/cache';
 import { parseDate } from '@/utils/parse-date';
-import { getPuppeteerPage } from '@/utils/puppeteer';
+import { getPlaywrightPage } from '@/utils/playwright';
 
 export const route: Route = {
     path: '/blog',
@@ -38,7 +38,7 @@ async function handler(ctx: Context) {
     const limit = Number.parseInt(ctx.req.query('limit') ?? '20', 10);
     const rootUrl = 'https://www.perplexity.ai/hub';
 
-    const { page, destory, browser } = await getPuppeteerPage(rootUrl, {
+    const { page, destroy, browser } = await getPlaywrightPage(rootUrl, {
         onBeforeLoad: async (page) => {
             await page.setRequestInterception(true);
             page.on('request', (request) => {
@@ -119,7 +119,9 @@ async function handler(ctx: Context) {
                     request.resourceType() === 'document' ? request.continue() : request.abort();
                 });
 
-                await contentPage.goto(item.link!, { waitUntil: 'domcontentloaded' });
+                await contentPage.goto(item.link!, {
+                    waitUntil: 'domcontentloaded',
+                });
 
                 const contentHtml = await contentPage.evaluate(() => document.documentElement.innerHTML);
                 await contentPage.close();
@@ -148,7 +150,7 @@ async function handler(ctx: Context) {
         })
     );
 
-    await destory();
+    await destroy();
 
     return {
         title: 'Perplexity Blog',
